@@ -1,40 +1,97 @@
 import React from 'react'
-import { Link } from "react-router-dom";
+import { NavLink } from "react-router-dom";
 import '../style/header.css'
 
-const Header = (props) => {
-    const handleLogout = () => {
-        localStorage.removeItem("jwtToken");
-        localStorage.removeItem("adminData");
-        window.location.href = "/";
-    }
+
+function Header() {
+    const [click, setClick] = React.useState(false);
+    const handleClick = () => setClick(!click);
+    const Close = () => setClick(false);
+
     return (
-        <>
-            <nav className="nav">
-                <div className="container">
-                    <div className="logo">
-                        <Link to='/home'>Your Logo</Link>
+        <div>
+            <div className={click ? "main-container" : ""} onClick={() => Close()} />
+            <nav className="navbar" onClick={e => e.stopPropagation()}>
+                <div className="nav-container">
+                    <NavLink exact to="/" className="nav-logo">
+                        eWallet
+                    </NavLink>
+                    <ul className={click ? "nav-menu active" : "nav-menu"}>
+                        <li className="nav-item">
+                            <NavLink
+                                exact
+                                to="/transaction"
+                                activeClassName="active"
+                                className="nav-links"
+                                onClick={click ? handleClick : null}
+                            >
+                                Transaction
+                            </NavLink>
+                        </li>
+                        <li className="nav-item">
+                            <NavLink
+                                exact
+                                to="/addfund"
+                                activeClassName="active"
+                                className="nav-links"
+                                onClick={click ? handleClick : null}
+                            >
+                                Add Fund
+                            </NavLink>
+                        </li>
+                        <li className="nav-item">
+                            <NavLink
+                                exact
+                                to="/blog"
+                                activeClassName="active"
+                                className="nav-links"
+                                onClick={click ? handleClick : null}
+                            >
+                                Blog
+                            </NavLink>
+                        </li>
+                        <li className="nav-item">
+                            <NavLink
+                                exact
+                                to="/review"
+                                activeClassName="active"
+                                className="nav-links"
+                                onClick={click ? handleClick : null}
+                            >
+                                Review
+                            </NavLink>
+                        </li>
+                        <li className="nav-item">
+                            <NavLink
+                                exact
+                                to="/profile"
+                                activeClassName="active"
+                                className="nav-links"
+                                onClick={click ? handleClick : null}
+                            >
+                                Profile
+                            </NavLink>
+                        </li>
+                        <li className="nav-item">
+                            <NavLink
+                                exact
+                                to="/registration"
+                                activeClassName="active"
+                                className="nav-links"
+                                onClick={click ? handleClick : null}
+                            >
+                                Add Admin
+                            </NavLink>
+                        </li>
+                    </ul>
+                    <div className="nav-icon" onClick={handleClick}>
+                        <i className={click ? "fa fa-times" : "fa fa-bars"}></i>
                     </div>
-                    <div id="mainListDiv" className="main_list">
-                        <ul className="navlinks">
-                            <li><Link to='/transaction'>Transaction</Link></li>
-                            <li><Link to='/addfund'>Add Fund</Link></li>
-                            <li><Link to='/review'>Review</Link></li>
-                            <li><Link to='/blog'>Blog</Link></li>
-                            <li><Link to='/profile'>Profile</Link></li>
-                            <li><Link to='/registration'>Add Account</Link></li>
-                            <li onClick={handleLogout}>Logout</li>
-                        </ul>
-                    </div>
-                    <span className="navTrigger">
-                        <i></i>
-                        <i></i>
-                        <i></i>
-                    </span>
                 </div>
             </nav>
-        </>
-    )
+        </ div>
+    );
 }
 
-export default Header 
+
+export default Header

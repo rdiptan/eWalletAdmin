@@ -25,11 +25,8 @@ function App() {
       <Router>
         {test?
         <Header config={config} authToken={authToken}/>:null}
-        <Routes>
-           
+        <Routes>          
           <Route path="/" element={test ?<Home /> :<Login/>} />
-        
-        
           <Route path="/transaction" element={<Transaction />} />
           <Route path="/registration" element={<Registration />} />
           <Route path="/blog" element={<Blog />} />

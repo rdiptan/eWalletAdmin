@@ -1,8 +1,10 @@
 import React, { useState } from 'react'
 import axios from 'axios'
 import '../style/registration.css'
+import { useNavigate } from 'react-router-dom';
 
 const Registration = () => {
+  const navigate = useNavigate();
   const initState = {
     password: '', email: '', fname: '', lname: '',
   }
@@ -17,10 +19,17 @@ const Registration = () => {
     e.preventDefault()
     try {
       const data = {
-        password, email
+        password, email, fname, lname,
       }
-      let res = await axios.post('http://localhost:90/admin/newadmin', data);
+      const config = {
+        headers: {
+            Authorization: 'Bearer ' + localStorage.getItem('jwtToken')
+        }
+    }
+      let res = await axios.post('http://localhost:90/admin/newadmin', data, config);
       console.log(res.data);
+      alert(res.data.msg)
+      navigate('/')
     } catch (error) {
       console.log(error);
     }

@@ -13,7 +13,7 @@ import Footer from "./components/Footer";
 import Login from "./auth/Login";
 
 function App() {
-  const test=true;
+  // const test=false;
   const authToken = localStorage.getItem("jwtToken");
   let config = {
     headers: {
@@ -23,10 +23,10 @@ function App() {
   return (
     <>
       <Router>
-        {test?
+        {authToken?
         <Header config={config} authToken={authToken}/>:null}
         <Routes>          
-          <Route path="/" element={test ?<Home /> :<Login/>} />
+          <Route path="/" element={authToken ?<Home /> :<Login/>} />
           <Route path="/transaction" element={<Transaction />} />
           <Route path="/registration" element={<Registration />} />
           <Route path="/blog" element={<Blog />} />

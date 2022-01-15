@@ -1,0 +1,11 @@
+.registration,
+.image {
+  min-height: 100vh;
+  padding: 2rem;
+}
+.bg-image {
+  background-image: url('../assets/backup.svg');
+  background-color: #fff;
+  background-size: cover;
+  /* background-position: center; */
+}

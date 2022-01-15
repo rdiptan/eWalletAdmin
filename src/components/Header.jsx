@@ -21,7 +21,7 @@ function Header() {
                             <NavLink
                                 exact
                                 to="/transaction"
-                                activeClassName="active"
+                                activeclassname="active"
                                 className="nav-links"
                                 onClick={click ? handleClick : null}
                             >
@@ -32,7 +32,7 @@ function Header() {
                             <NavLink
                                 exact
                                 to="/addfund"
-                                activeClassName="active"
+                                activeclassname="active"
                                 className="nav-links"
                                 onClick={click ? handleClick : null}
                             >
@@ -43,7 +43,7 @@ function Header() {
                             <NavLink
                                 exact
                                 to="/blog"
-                                activeClassName="active"
+                                activeclassname="active"
                                 className="nav-links"
                                 onClick={click ? handleClick : null}
                             >
@@ -54,7 +54,7 @@ function Header() {
                             <NavLink
                                 exact
                                 to="/review"
-                                activeClassName="active"
+                                activeclassname="active"
                                 className="nav-links"
                                 onClick={click ? handleClick : null}
                             >
@@ -65,7 +65,7 @@ function Header() {
                             <NavLink
                                 exact
                                 to="/profile"
-                                activeClassName="active"
+                                activeclassname="active"
                                 className="nav-links"
                                 onClick={click ? handleClick : null}
                             >
@@ -76,7 +76,7 @@ function Header() {
                             <NavLink
                                 exact
                                 to="/registration"
-                                activeClassName="active"
+                                activeclassname="active"
                                 className="nav-links"
                                 onClick={click ? handleClick : null}
                             >

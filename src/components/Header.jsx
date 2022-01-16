@@ -3,10 +3,16 @@ import { NavLink } from "react-router-dom";
 import '../style/header.css'
 
 
-function Header() {
+function Header(props) {
     const [click, setClick] = React.useState(false);
     const handleClick = () => setClick(!click);
     const Close = () => setClick(false);
+
+    const handleLogout = () => {
+        localStorage.removeItem("jwtToken");
+        localStorage.removeItem("customerData");
+        window.location.href = "/";
+    }
 
     return (
         <div>
@@ -82,6 +88,9 @@ function Header() {
                             >
                                 Add Admin
                             </NavLink>
+                        </li>
+                        <li>
+                        <button onClick={handleLogout} className="btn btn-outline-danger text-uppercase mb-2 rounded-pill shadow-sm">Logout</button>
                         </li>
                     </ul>
                     <div className="nav-icon" onClick={handleClick}>

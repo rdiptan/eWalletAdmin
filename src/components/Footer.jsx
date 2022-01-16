@@ -4,7 +4,7 @@ import '../style/footer.css'
 const Footer = () => {
   return (
     <>
-    <div className='disclaimer'><p>Footer</p></div>
+    <div className='disclaimer'><p>Copyright &copy; 2022 eWallet Designed and Developed by Diptan Regmi!!!</p></div>
     </>
   )
 }

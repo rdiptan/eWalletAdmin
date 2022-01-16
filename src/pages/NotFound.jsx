@@ -1,9 +1,10 @@
 import React from 'react'
+import graphics from '../assets/404.svg'
 
 const NotFound = () => {
   return (
     <>
-    <h1>Page Not Found</h1>
+    <img src={graphics} alt="404 Page Not Found" class="mx-auto d-block"/>
     </>
   )
 }

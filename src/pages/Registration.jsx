@@ -39,7 +39,7 @@ const Registration = () => {
     <div className="maincontainer">
       <div className="container-fluid">
         <div className="row no-gutter">
-          <div className="col-md-6 d-none d-md-flex bg-image"></div>
+          <div className="col-md-6 d-none d-md-flex bg-image-registration"></div>
           <div className="col-md-6">
             <div className="registration d-flex align-items-center py-5">
               <div className="container">

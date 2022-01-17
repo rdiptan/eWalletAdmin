@@ -1,9 +1,9 @@
-.registration {
+.addfund {
   min-height: 80vh;
   padding: 2rem;
 }
-.bg-image-registration {
-  background-image: url('../assets/bank2.svg');
+.bg-image-addfund {
+  background-image: url('../assets/moneyTransfer.svg');
   background-color: #fff;
   background-size: cover;
   /* background-position: center; */

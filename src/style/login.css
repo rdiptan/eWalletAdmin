@@ -1,9 +1,8 @@
-.login,
-.image {
-  min-height: 90vh;
+.login {
+  min-height: 85vh;
   padding: 2rem;
 }
-.bg-image {
+.bg-image-login {
   background-image: url('../assets/backup.svg');
   background-color: #fff;
   background-size: cover;

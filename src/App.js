@@ -9,33 +9,35 @@ import Review from "./pages/Review";
 import Profile from "./pages/Profile";
 import NotFound from "./pages/NotFound";
 import Footer from "./components/Footer";
-
+import AddBlog from "./pages/NewBlog";
 import Login from "./auth/Login";
 
 function App() {
-  // const test=false;
   const authToken = localStorage.getItem("jwtToken");
   let config = {
     headers: {
-      Authorization: `Bearer ${authToken}` 
-    }
-  }
+      Authorization: `Bearer ${authToken}`,
+    },
+  };
   return (
     <>
       <Router>
-        {authToken?
-        <Header config={config} authToken={authToken}/>:null}
-        <Routes>          
-          <Route path="/" element={authToken ?<Home /> :<Login/>} />
-          <Route path="/transaction" element={<Transaction />} />
+        {authToken ? <Header config={config} authToken={authToken} /> : null}
+        <Routes>
+          <Route path="/" element={authToken ? <Home /> : <Login />} />
+          <Route
+            path="/transaction"
+            element={<Transaction auth_token={config} />}
+          />
           <Route path="/registration" element={<Registration />} />
-          <Route path="/blog" element={<Blog />} />
+          <Route path="/blog" element={<Blog auth_token={config} />} />
           <Route path="/addfund" element={<AddFund />} />
-          <Route path="/review" element={<Review />} />
-          <Route path="/profile" element={<Profile />} />
-          <Route path="*" element={<NotFound />}/>
+          <Route path="/review" element={<Review auth_token={config} />} />
+          <Route path="/profile" element={<Profile auth_token={config} />} />
+          <Route path="/addblog" element={<AddBlog auth_token={config}/>} />
+          <Route path="*" element={<NotFound />} />
         </Routes>
-        <Footer/>
+        <Footer />
       </Router>
     </>
   );

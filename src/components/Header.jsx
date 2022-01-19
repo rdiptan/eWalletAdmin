@@ -2,6 +2,7 @@ import React from 'react'
 import { NavLink } from "react-router-dom";
 import '../style/header.css'
 
+const logo = require('../assets/eWallet.png');
 
 function Header(props) {
     const [click, setClick] = React.useState(false);
@@ -19,13 +20,13 @@ function Header(props) {
             <div className={click ? "main-container" : ""} onClick={() => Close()} />
             <nav className="navbar" onClick={e => e.stopPropagation()}>
                 <div className="nav-container">
-                    <NavLink exact to="/" className="nav-logo">
+                    <NavLink to="/" className="nav-logo">
+                        <img src={logo} alt="Logo" height="80rem" />
                         eWallet
                     </NavLink>
                     <ul className={click ? "nav-menu active" : "nav-menu"}>
                         <li className="nav-item">
                             <NavLink
-                                exact
                                 to="/transaction"
                                 activeclassname="active"
                                 className="nav-links"
@@ -36,7 +37,6 @@ function Header(props) {
                         </li>
                         <li className="nav-item">
                             <NavLink
-                                exact
                                 to="/addfund"
                                 activeclassname="active"
                                 className="nav-links"
@@ -47,7 +47,6 @@ function Header(props) {
                         </li>
                         <li className="nav-item">
                             <NavLink
-                                exact
                                 to="/blog"
                                 activeclassname="active"
                                 className="nav-links"
@@ -58,7 +57,6 @@ function Header(props) {
                         </li>
                         <li className="nav-item">
                             <NavLink
-                                exact
                                 to="/review"
                                 activeclassname="active"
                                 className="nav-links"
@@ -69,7 +67,6 @@ function Header(props) {
                         </li>
                         <li className="nav-item">
                             <NavLink
-                                exact
                                 to="/profile"
                                 activeclassname="active"
                                 className="nav-links"
@@ -80,7 +77,6 @@ function Header(props) {
                         </li>
                         <li className="nav-item">
                             <NavLink
-                                exact
                                 to="/registration"
                                 activeclassname="active"
                                 className="nav-links"
@@ -90,7 +86,7 @@ function Header(props) {
                             </NavLink>
                         </li>
                         <li>
-                        <button onClick={handleLogout} className="btn btn-outline-danger text-uppercase mb-2 rounded-pill shadow-sm">Logout</button>
+                            <button onClick={handleLogout} className="btn btn-outline-danger text-uppercase mb-2 rounded-pill shadow-sm">Logout</button>
                         </li>
                     </ul>
                     <div className="nav-icon" onClick={handleClick}>

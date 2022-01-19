@@ -7,4 +7,5 @@
   color: white;
   text-align: center;
   padding-top: 0.5rem;
+  z-index: 99;
 }

@@ -49,10 +49,10 @@ const AddFund = () => {
                     <p className="text-muted mb-4">Load Fund to user accounts...</p>
                     <form onSubmit={handleSubmit}>
                       <div className="form-group mb-3">
-                        <input id="inputEmail" name="email" value={email} onChange={handleInput} type="email" placeholder="Email address" required autoFocus className="form-control rounded-pill border-0 shadow-sm bg-light px-4" />
+                        <input id="inputEmail" name="email" value={email} onChange={handleInput} type="email" placeholder="Email address" required autoFocus className="form-control rounded-pill border-0 shadow-sm px-4" />
                       </div>
                       <div className="form-group mb-3">
-                        <input id="inputAmount" name="amount" value={amount} onChange={handleInput} type="number" placeholder="Transaction Amount" min="1" required className="form-control rounded-pill border-0 shadow-sm bg-light px-4" />
+                        <input id="inputAmount" name="amount" value={amount} onChange={handleInput} type="number" placeholder="Transaction Amount" min="1" required className="form-control rounded-pill border-0 shadow-sm px-4" />
                       </div>
                       <div className="form-group mb-3">
                         <button type="submit" disabled={email && amount ? false : true} className="btn btn-success text-uppercase mb-2 rounded-pill shadow-sm">Add Fund</button>

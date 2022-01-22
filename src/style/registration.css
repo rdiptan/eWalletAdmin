@@ -4,7 +4,7 @@
 }
 .bg-image-registration {
   background-image: url('../assets/bank2.svg');
-  background-color: #fff;
+  background-color: #f9f9fa;
   background-size: cover;
   /* background-position: center; */
 }

@@ -51,18 +51,18 @@ const Registration = () => {
                       <div className="form-group mb-3">
                         <div className="row">
                         <div className="col">
-                          <input id="inputFname" name="fname" value={fname} onChange={handleInput} type="text" placeholder="First Name" required autoFocus className="form-control rounded-pill border-0 shadow-sm bg-light px-4" />
+                          <input id="inputFname" name="fname" value={fname} onChange={handleInput} type="text" placeholder="First Name" required autoFocus className="form-control rounded-pill border-0 shadow-sm px-4" />
                         </div>
                         <div className="col">
-                          <input id="inputLname" name="lname" value={lname} onChange={handleInput} type="text" placeholder="Last Name" required className="form-control rounded-pill border-0 shadow-sm bg-light px-4" />
+                          <input id="inputLname" name="lname" value={lname} onChange={handleInput} type="text" placeholder="Last Name" required className="form-control rounded-pill border-0 shadow-sm px-4" />
                         </div>
                         </div>
                       </div>
                       <div className="form-group mb-3">
-                        <input id="inputEmail" name="email" value={email} onChange={handleInput} type="email" placeholder="Email address" required autoFocus className="form-control rounded-pill border-0 shadow-sm bg-light px-4" />
+                        <input id="inputEmail" name="email" value={email} onChange={handleInput} type="email" placeholder="Email address" required autoFocus className="form-control rounded-pill border-0 shadow-sm px-4" />
                       </div>
                       <div className="form-group mb-3">
-                        <input id="inputPassword" name="password" value={password} onChange={handleInput} type="password" placeholder="Password" required className="form-control rounded-pill border-0 shadow-sm bg-light px-4" />
+                        <input id="inputPassword" name="password" value={password} onChange={handleInput} type="password" placeholder="Password" required className="form-control rounded-pill border-0 shadow-sm px-4" />
                       </div>
                       <div className="form-group mb-3">
                         <button type="submit" disabled={email && password && fname && lname ? false : true} className="btn btn-success text-uppercase mb-2 rounded-pill shadow-sm">Register</button>

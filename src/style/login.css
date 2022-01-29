@@ -4,7 +4,7 @@
 }
 .bg-image-login {
   background-image: url('../assets/backup.svg');
-  background-color: #fff;
+  background-color: #f9f9fa;
   background-size: cover;
   /* background-position: center; */
 }

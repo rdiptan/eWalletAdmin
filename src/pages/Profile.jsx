@@ -5,6 +5,7 @@ import Moment from 'moment'
 
 const Profile = (props) => {
   const [pdata, setPdata] = useState([]);
+  const [image, setImage] = useState('')
 
   const initState = {
     old_password: '', new_password: ''
@@ -14,6 +15,18 @@ const Profile = (props) => {
   const handleInput = e => {
     const { name, value } = e.target
     setFvalue({ ...fvalue, [name]: value })
+  }
+  const profileData = new FormData()
+  console.log(profileData)
+  profileData.append('image', image)
+  async function handleSubmitFile(e) {
+    try {
+      e.preventDefault()
+      let res = await axios.put('http://localhost:90/admin/profile/update', profileData, props.auth_token);
+      window.location.reload()
+    } catch (error) {
+      console.log(error)
+    }
   }
 
   async function handleSubmit(e) {
@@ -26,10 +39,8 @@ const Profile = (props) => {
           old_password, new_password
         }
         let res = await axios.post('http://localhost:90/change-password', data, props.auth_token);
-        console.log(res.data);
         alert(res.data.msg)
         window.location.reload()
-
       } catch (error) {
         console.log(error);
       }
@@ -43,6 +54,7 @@ const Profile = (props) => {
         setPdata(res.data.admin_data);
       })()
   }, [props.auth_token]);
+
   return (
     <>
       <div className="padding">
@@ -53,9 +65,16 @@ const Profile = (props) => {
                 <div className="col-sm-4 bg-c-lite-green user-profile">
                   <div className="card-block text-center text-white">
                     <div className="m-b-25">
-                      <img src="https://bootdey.com/img/Content/avatar/avatar7.png" alt="Admin" className="rounded-circle" width="90%" />
+                      <img src={pdata.image ? `http://localhost:90/${pdata.image}` : `https://bootdey.com/img/Content/avatar/avatar7.png`} alt="Admin" className="rounded-circle" width="90%" />
                     </div>
-                    <h3 className="f-w-1200">Diptan Regmi</h3>
+                    <form onSubmit={handleSubmitFile}>
+                    <div className="same-line">
+                      <input type="file" onChange={(e) => {
+                        setImage(e.target.files[0])
+                      }} />
+                      <button type="submit" className='btn btn-outline-success btn-sm'> Submit </button>
+                      </div>
+                    </form>
                   </div>
                 </div>
                 <div className="col-sm-8">

@@ -6,6 +6,11 @@ body {
   padding: 3rem !important;
 }
 
+.same-line{
+  display: flex;
+  justify-content: space-between;
+}
+
 .user-card-full {
   overflow: hidden;
 }

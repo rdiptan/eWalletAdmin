@@ -10,6 +10,7 @@ import Profile from "./pages/Profile";
 import NotFound from "./pages/NotFound";
 import Footer from "./components/Footer";
 import AddBlog from "./pages/NewBlog";
+import KYC from "./pages/KYC";
 import Login from "./auth/Login";
 
 function App() {
@@ -17,6 +18,7 @@ function App() {
   let config = {
     headers: {
       Authorization: `Bearer ${authToken}`,
+      "Content-Type": "application/json",
     },
   };
   return (
@@ -34,7 +36,8 @@ function App() {
           <Route path="/addfund" element={<AddFund />} />
           <Route path="/review" element={<Review auth_token={config} />} />
           <Route path="/profile" element={<Profile auth_token={config} />} />
-          <Route path="/addblog" element={<AddBlog auth_token={config}/>} />
+          <Route path="/addblog" element={<AddBlog auth_token={config} />} />
+          <Route path="/kyc" element={<KYC auth_token={config} />} />
           <Route path="*" element={<NotFound />} />
         </Routes>
         <Footer />

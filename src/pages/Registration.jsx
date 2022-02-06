@@ -36,6 +36,7 @@ const Registration = () => {
   }
 
   return (
+    <>
     <div className="maincontainer">
       <div className="container-fluid">
         <div className="row no-gutter">
@@ -76,6 +77,12 @@ const Registration = () => {
         </div>
       </div>
     </div>
+    <div>
+      <hr></hr>
+      <h1>hhh</h1>
+      <h1>hhh</h1>
+    </div>
+    </>
   )
 };
 

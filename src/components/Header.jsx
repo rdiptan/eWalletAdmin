@@ -22,9 +22,18 @@ function Header(props) {
                 <div className="nav-container">
                     <NavLink to="/" className="nav-logo">
                         <img src={logo} alt="Logo" height="80rem" />
-                        eWallet
                     </NavLink>
                     <ul className={click ? "nav-menu active" : "nav-menu"}>
+                    <li className="nav-item">
+                            <NavLink
+                                to="/kyc"
+                                activeclassname="active"
+                                className="nav-links"
+                                onClick={click ? handleClick : null}
+                            >
+                                KYC
+                            </NavLink>
+                        </li>
                         <li className="nav-item">
                             <NavLink
                                 to="/transaction"

@@ -22,7 +22,7 @@ const Profile = (props) => {
   async function handleSubmitFile(e) {
     try {
       e.preventDefault()
-      let res = await axios.put('http://localhost:90/admin/profile/update', profileData, props.auth_token);
+      await axios.put('http://localhost:90/admin/profile/update', profileData, props.auth_token);
       window.location.reload()
     } catch (error) {
       console.log(error)

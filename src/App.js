@@ -31,9 +31,12 @@ function App() {
             path="/transaction"
             element={<Transaction auth_token={config} />}
           />
-          <Route path="/registration" element={<Registration />} />
+          <Route
+            path="/registration"
+            element={<Registration auth_token={config} />}
+          />
           <Route path="/blog" element={<Blog auth_token={config} />} />
-          <Route path="/addfund" element={<AddFund />} />
+          <Route path="/addfund" element={<AddFund auth_token={config} />} />
           <Route path="/review" element={<Review auth_token={config} />} />
           <Route path="/profile" element={<Profile auth_token={config} />} />
           <Route path="/addblog" element={<AddBlog auth_token={config} />} />

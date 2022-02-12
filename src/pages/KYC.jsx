@@ -30,8 +30,8 @@ const KYC = (props) => {
                 <div className="container py-2">
                     {kycdata ? kycdata.map((data) =>
                         <article className="postcard light green" key={data._id}>
-                            <a className="postcard__img_link" href={ data.citizenship_proof ? `http://localhost:90/${data.citizenship_proof}` : `https://picsum.photos/500/501`} target="_blank">
-                                <img className="postcard__img" src={ data.citizenship_proof ? `http://localhost:90/${data.citizenship_proof}` : `https://picsum.photos/500/501`} alt="Citizenship Document" />
+                            <a className="postcard__img_link" href={data.citizenship_proof ? `http://localhost:90/${data.citizenship_proof}` : `https://picsum.photos/500/501`} target="_blank" rel="noreferrer">
+                                <img className="postcard__img" src={data.citizenship_proof ? `http://localhost:90/${data.citizenship_proof}` : `https://cdn.dribbble.com/users/93860/screenshots/6619359/file.png?compress=1&resize=400x300`} alt="Citizenship Document" />
                             </a>
                             <div className="postcard__text t-dark">
                                 <h1 className="postcard__title green">
@@ -40,7 +40,7 @@ const KYC = (props) => {
                                 <div className="postcard__subtitle small">
                                     <ul>
                                         <li className="tag__item">
-                                        <i class="far fa-envelope me-2"></i> {data.user.email}
+                                            <i className="far fa-envelope me-2"></i> {data.user.email}
                                         </li>
                                     </ul>
                                 </div>
@@ -54,7 +54,7 @@ const KYC = (props) => {
                                     </ul>
                                 </div>
                                 <ul className="postcard__tagbox">
-                                    <li className="tag__item"><i class="fas fa-money-bill-alt mr-2"></i>{data.balance}</li>
+                                    <li className="tag__item"><i className="fas fa-money-bill-alt mr-2"></i>{data.balance}</li>
                                     <li className="tag__item"><i className="fas fa-clock mr-2"></i>{Moment(data.user.created_at).format('Do MMMM YYYY')}</li>
                                     <li>
                                     </li>

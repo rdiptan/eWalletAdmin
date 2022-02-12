@@ -15,7 +15,7 @@ const NewBlog = (props) => {
     }
     async function handleSubmit(e) {
         e.preventDefault()
-        try{
+        try {
             const data = {
                 title, description, content
             }
@@ -25,7 +25,7 @@ const NewBlog = (props) => {
             if (res.data.success === true) {
                 navigate('/blog')
             }
-        }catch(error){
+        } catch (error) {
             console.log(error);
         }
     }

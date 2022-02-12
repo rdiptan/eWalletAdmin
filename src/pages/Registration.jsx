@@ -1,10 +1,13 @@
-import React, { useState } from 'react'
+import React, { useEffect, useState } from 'react'
 import axios from 'axios'
 import '../style/registration.css'
 import { useNavigate } from 'react-router-dom';
+import Moment from 'moment'
 
-const Registration = () => {
+const Registration = (props) => {
   const navigate = useNavigate();
+  const [adata, setAdata] = useState([]);
+
   const initState = {
     password: '', email: '', fname: '', lname: '',
   }
@@ -15,18 +18,21 @@ const Registration = () => {
     setFvalue({ ...fvalue, [name]: value })
   }
 
+  const removeAdmin = async (id) => {
+    if (window.confirm("Are you sure want to remove this admin?")) {
+   await axios.put(`http://localhost:90/admin/remove/${id}`,{}, props.auth_token)
+     window.location.reload()
+    }
+  }
+
   async function handleSubmit(e) {
     e.preventDefault()
     try {
       const data = {
         password, email, fname, lname,
       }
-      const config = {
-        headers: {
-            Authorization: 'Bearer ' + localStorage.getItem('jwtToken')
-        }
-    }
-      let res = await axios.post('http://localhost:90/admin/newadmin', data, config);
+
+      let res = await axios.post('http://localhost:90/admin/newadmin', data, props.auth_token);
       console.log(res.data);
       alert(res.data.msg)
       navigate('/')
@@ -34,6 +40,13 @@ const Registration = () => {
       console.log(error);
     }
   }
+  useEffect(() => {
+    (
+      async () => {
+        const res = await axios.get("http://localhost:90/admin/alladmins", props.auth_token)
+        setAdata(res.data.admin_data);
+      })()
+  }, [props.auth_token]);
 
   return (
     <>
@@ -79,7 +92,47 @@ const Registration = () => {
     </div>
     <div>
       <hr></hr>
-      <h1>hhh</h1>
+      <div className="col-xs-1 text-center">
+        <h2>All Admins</h2>
+        <div className="table-responsive-xl">
+          <table className="table table-striped ">
+            <thead>
+              <tr>
+                <th>Image</th>
+                <th>Name</th>
+                <th>Joined On</th>
+                <th>Status</th>
+                <th>Actions</th>
+              </tr>
+            </thead>
+            <tbody>
+              {adata ?
+                adata.map((item) =>
+                  <tr key={item._id}>
+                    <td>
+                    <img src={item.image ? `http://localhost:90/${item.image}` : `https://bootdey.com/img/Content/avatar/avatar7.png`} alt="Admin" className="rounded-circle" width="20%" />
+                    </td>
+                    <td>{item.fname + " " + item.lname}</td>
+                    <td>{Moment(item.created_at).format('MMMM YYYY')}</td>
+                    <td>{item.is_active ? <p className="green">Active</p> : <p className="orange">Deleted</p>}</td>
+                    <td>
+                      <span>{
+                        item.is_active ?
+                          <button className="btn orange" type="submit" onClick={() => { removeAdmin(item._id) }}>
+                            <i className="fa fa-trash"></i>
+                          </button> :
+                          null
+                      }
+                      </span>
+                    </td>
+                  </tr>
+                ) : null
+              }
+            </tbody>
+          </table>
+        </div>
+
+      </div>
       <h1>hhh</h1>
     </div>
     </>

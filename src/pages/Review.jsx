@@ -4,7 +4,6 @@ import Moment from 'moment'
 
 const Review = (props) => {
   const [pdata, setPdata] = useState([]);
- 
 
   const deleteReview = async (id) => {
     if (window.confirm("Are you sure want to delete this review?")) {
@@ -14,8 +13,8 @@ const Review = (props) => {
   }
   const publishReview = async (id) => {
     if (window.confirm("Are you sure want to change publish status of this review?")) {
-   await axios.put(`http://localhost:90/review/admin/publish/${id}`,{}, props.auth_token)
-     window.location.reload()
+      await axios.put(`http://localhost:90/review/admin/publish/${id}`, {}, props.auth_token)
+      window.location.reload()
     }
   }
   useEffect(() => {

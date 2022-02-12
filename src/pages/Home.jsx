@@ -57,7 +57,7 @@ const Home = () => {
                   <div className="row align-items-center mb-2 d-flex">
                     <div className="col-8">
                       <h2 className="d-flex align-items-center mb-0">
-                      Rs.116255
+                        Rs.116255
                       </h2>
                     </div>
                     <div className="col-4 text-right">

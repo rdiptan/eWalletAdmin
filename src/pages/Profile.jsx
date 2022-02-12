@@ -68,11 +68,11 @@ const Profile = (props) => {
                       <img src={pdata.image ? `http://localhost:90/${pdata.image}` : `https://bootdey.com/img/Content/avatar/avatar7.png`} alt="Admin" className="rounded-circle" width="90%" />
                     </div>
                     <form onSubmit={handleSubmitFile}>
-                    <div className="same-line">
-                      <input type="file" onChange={(e) => {
-                        setImage(e.target.files[0])
-                      }} />
-                      <button type="submit" className='btn btn-outline-success btn-sm'> Submit </button>
+                      <div className="same-line">
+                        <input type="file" onChange={(e) => {
+                          setImage(e.target.files[0])
+                        }} />
+                        <button type="submit" className='btn btn-outline-success btn-sm'> Submit </button>
                       </div>
                     </form>
                   </div>

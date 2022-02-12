@@ -54,7 +54,7 @@ const Blog = (props) => {
                         </div>
                       </div>
                       <p className="blog-content">
-                        {item.content.slice(0,128)}...
+                        {item.content.slice(0, 128)}...
                       </p>
                       <p className="blog-date">
                         Created At: {Moment(item.created_at).format('MMMM Do YYYY, h:mm a')}
@@ -91,13 +91,13 @@ const Blog = (props) => {
       </div>
       <br></br>
       <Link to='/addblog'>
-      <button
-        type="button"
-        className="btn btn-success shadow-lg btn-floating btn-circle btn-xl"
-        id="btn-add"
-      >
-        <i className="fa fa-plus"></i>
-      </button>
+        <button
+          type="button"
+          className="btn btn-success shadow-lg btn-floating btn-circle btn-xl"
+          id="btn-add"
+        >
+          <i className="fa fa-plus"></i>
+        </button>
       </Link>
     </>
   )

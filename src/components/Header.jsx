@@ -91,7 +91,7 @@ function Header(props) {
                                 className="nav-links"
                                 onClick={click ? handleClick : null}
                             >
-                                Add Admin
+                                Admins
                             </NavLink>
                         </li>
                         <li>

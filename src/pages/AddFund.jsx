@@ -23,9 +23,9 @@ const AddFund = () => {
       }
       const config = {
         headers: {
-            Authorization: 'Bearer ' + localStorage.getItem('jwtToken')
+          Authorization: 'Bearer ' + localStorage.getItem('jwtToken')
         }
-    }
+      }
       let res = await axios.post('http://localhost:90/kyc/addbalance', data, config);
       console.log(res.data);
       alert(res.data.msg)
@@ -35,7 +35,7 @@ const AddFund = () => {
     }
   }
   return (
-    
+
     <div className="maincontainer">
       <div className="container-fluid">
         <div className="row no-gutter">

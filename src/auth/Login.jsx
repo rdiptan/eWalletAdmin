@@ -54,7 +54,7 @@ const Login = () => {
                                                 <input id="inputPassword" name="password" value={password} onChange={handleInput} type="password" placeholder="Password" required className="form-control rounded-pill border-0 shadow-sm bg-light px-4" />
                                             </div>
                                             <div className="form-group mb-3">
-                                            <button type="submit" disabled={email && password ? false : true} className="btn btn-success text-uppercase mb-2 rounded-pill shadow-sm">Sign in</button>
+                                                <button type="submit" disabled={email && password ? false : true} className="btn btn-success text-uppercase mb-2 rounded-pill shadow-sm">Sign in</button>
                                             </div>
                                         </form>
                                     </div>

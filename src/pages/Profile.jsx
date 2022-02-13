@@ -17,7 +17,6 @@ const Profile = (props) => {
     setFvalue({ ...fvalue, [name]: value })
   }
   const profileData = new FormData()
-  console.log(profileData)
   profileData.append('image', image)
   async function handleSubmitFile(e) {
     try {
@@ -104,10 +103,10 @@ const Profile = (props) => {
                     <div className="row">
                       <form onSubmit={handleSubmit}>
                         <div className="form-group mb-3">
-                          <input id="old_password" name="old_password" value={old_password} onChange={handleInput} type="password" placeholder="Current Password" required autoFocus className="form-control rounded-pill border-0 shadow-sm bg-light px-4" />
+                          <input id="old_password" autoComplete="old_password" name="old_password" value={old_password} onChange={handleInput} type="password" placeholder="Current Password" required autoFocus className="form-control rounded-pill border-0 shadow-sm bg-light px-4" />
                         </div>
                         <div className="form-group mb-3">
-                          <input id="new_password" name="new_password" value={new_password} onChange={handleInput} type="password" placeholder="New Password" required className="form-control rounded-pill border-0 shadow-sm bg-light px-4" />
+                          <input id="new_password" autoComplete="new_password" name="new_password" value={new_password} onChange={handleInput} type="password" placeholder="New Password" required className="form-control rounded-pill border-0 shadow-sm bg-light px-4" />
                         </div>
                         <div className="form-group mb-3">
                           <button type="submit" disabled={old_password && new_password ? false : true} className="btn btn-success text-uppercase mb-2 rounded-pill shadow-sm">change password</button>

@@ -22,8 +22,6 @@ const KYC = (props) => {
             })()
     }, [props.auth_token]);
 
-    console.log(kycdata)
-
     return (
         <>
             <section>

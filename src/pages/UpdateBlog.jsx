@@ -39,8 +39,7 @@ const NewBlog = (props) => {
                 title, description, content
             }
             let res = await axios.put(`http://localhost:90/blog/update/${id}`, data, props.auth_token);
-            alert(res.data.msg);
-           // setMessage(res.data.msg)
+           setMessage(res.data.msg)
             if (res.data.success === true) {
                 navigate('/blog')
             }
@@ -57,6 +56,7 @@ const NewBlog = (props) => {
                             <h3 className="display-4">Blog!!!</h3>
                             <h1 className='text-center'>{message}</h1>
                             <p className="text-muted mb-4">Write a blog...</p>
+                            <p className="text-muted mb-4 red">{message}</p>
                             <form onSubmit={handleSubmit}>
                                 <div className="form-group mb-3">
                                     <input id="inputTitle" name="title" value={title} onChange={handleInput} type="text" placeholder="Title" required autoFocus className="form-control rounded-pill border-0 shadow-sm px-4" />

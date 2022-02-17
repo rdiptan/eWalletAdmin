@@ -27,9 +27,10 @@ const AddFund = () => {
         }
       }
       let res = await axios.post('http://localhost:90/kyc/addbalance', data, config);
-      console.log(res.data);
       alert(res.data.msg)
-      navigate('/')
+      if (res.data.success === true) {
+        navigate('/')
+      }
     } catch (error) {
       console.log(error);
     }

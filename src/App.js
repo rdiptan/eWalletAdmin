@@ -13,6 +13,7 @@ import AddBlog from "./pages/NewBlog";
 import KYC from "./pages/KYC";
 import UpdateBlog from "./pages/UpdateBlog";
 import Login from "./auth/Login";
+import PrivateRoute from "./auth/PrivateRoute";
 
 function App() {
   const authToken = localStorage.getItem("jwtToken");
@@ -30,19 +31,19 @@ function App() {
           <Route path="/" element={authToken ? <Home /> : <Login />} />
           <Route
             path="/transaction"
-            element={<Transaction auth_token={config} />}
+            element={<PrivateRoute><Transaction auth_token={config} /></PrivateRoute>}
           />
           <Route
             path="/registration"
-            element={<Registration auth_token={config} />}
+            element={<PrivateRoute><Registration auth_token={config} /></PrivateRoute>}
           />
-          <Route path="/blog" element={<Blog auth_token={config} />} />
-          <Route path="/addfund" element={<AddFund auth_token={config} />} />
-          <Route path="/review" element={<Review auth_token={config} />} />
-          <Route path="/profile" element={<Profile auth_token={config} />} />
-          <Route path="/addblog" element={<AddBlog auth_token={config} />} />
-          <Route path="blog/updateblog/:id" element={<UpdateBlog auth_token={config} />} />
-          <Route path="/kyc" element={<KYC auth_token={config} />} />
+          <Route path="/blog" element={<PrivateRoute><Blog auth_token={config} /></PrivateRoute>} />
+          <Route path="/addfund" element={<PrivateRoute> <AddFund auth_token={config} /></PrivateRoute>} />
+          <Route path="/review" element={<PrivateRoute><Review auth_token={config} /></PrivateRoute>} />
+          <Route path="/profile" element={<PrivateRoute><Profile auth_token={config} /></PrivateRoute>} />
+          <Route path="/addblog" element={<PrivateRoute><AddBlog auth_token={config} /></PrivateRoute>} />
+          <Route path="blog/updateblog/:id" element={<PrivateRoute><UpdateBlog auth_token={config} /></PrivateRoute>} />
+          <Route path="/kyc" element={<PrivateRoute><KYC auth_token={config} /></PrivateRoute>} />
           <Route path="*" element={<NotFound />} />
         </Routes>
         <Footer />

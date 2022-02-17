@@ -11,6 +11,7 @@ import NotFound from "./pages/NotFound";
 import Footer from "./components/Footer";
 import AddBlog from "./pages/NewBlog";
 import KYC from "./pages/KYC";
+import UpdateBlog from "./pages/UpdateBlog";
 import Login from "./auth/Login";
 
 function App() {
@@ -40,6 +41,7 @@ function App() {
           <Route path="/review" element={<Review auth_token={config} />} />
           <Route path="/profile" element={<Profile auth_token={config} />} />
           <Route path="/addblog" element={<AddBlog auth_token={config} />} />
+          <Route path="blog/updateblog/:id" element={<UpdateBlog auth_token={config} />} />
           <Route path="/kyc" element={<KYC auth_token={config} />} />
           <Route path="*" element={<NotFound />} />
         </Routes>

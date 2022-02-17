@@ -76,7 +76,7 @@ const Blog = (props) => {
                           </button>
                         </span>
                         <span>
-                          <Link to={`productupdate/${item._id}`}>
+                          <Link to={`updateblog/${item._id}`}>
                             <button className='btn btn-outline-success'> Update </button>
                           </Link>
                         </span>

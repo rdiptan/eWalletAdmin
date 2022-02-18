@@ -7,7 +7,7 @@ const NotFound = () => {
     <>
       <img src={graphics} alt="404 Page Not Found" className="mx-auto d-block" />
       <Link to='/'>
-      <button className='btn btn-outline-success mt-4 mx-auto d-block'>Back to Home</button>
+        <button className='btn btn-outline-success mt-4 mx-auto d-block'>Back to Home</button>
       </Link>
     </>
   )

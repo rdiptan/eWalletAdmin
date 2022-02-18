@@ -31,19 +31,77 @@ function App() {
           <Route path="/" element={authToken ? <Home /> : <Login />} />
           <Route
             path="/transaction"
-            element={<PrivateRoute><Transaction auth_token={config} /></PrivateRoute>}
+            element={
+              <PrivateRoute>
+                <Transaction auth_token={config} />
+              </PrivateRoute>
+            }
           />
           <Route
             path="/registration"
-            element={<PrivateRoute><Registration auth_token={config} /></PrivateRoute>}
+            element={
+              <PrivateRoute>
+                <Registration auth_token={config} />
+              </PrivateRoute>
+            }
           />
-          <Route path="/blog" element={<PrivateRoute><Blog auth_token={config} /></PrivateRoute>} />
-          <Route path="/addfund" element={<PrivateRoute> <AddFund auth_token={config} /></PrivateRoute>} />
-          <Route path="/review" element={<PrivateRoute><Review auth_token={config} /></PrivateRoute>} />
-          <Route path="/profile" element={<PrivateRoute><Profile auth_token={config} /></PrivateRoute>} />
-          <Route path="/addblog" element={<PrivateRoute><AddBlog auth_token={config} /></PrivateRoute>} />
-          <Route path="blog/updateblog/:id" element={<PrivateRoute><UpdateBlog auth_token={config} /></PrivateRoute>} />
-          <Route path="/kyc" element={<PrivateRoute><KYC auth_token={config} /></PrivateRoute>} />
+          <Route
+            path="/blog"
+            element={
+              <PrivateRoute>
+                <Blog auth_token={config} />
+              </PrivateRoute>
+            }
+          />
+          <Route
+            path="/addfund"
+            element={
+              <PrivateRoute>
+                {" "}
+                <AddFund auth_token={config} />
+              </PrivateRoute>
+            }
+          />
+          <Route
+            path="/review"
+            element={
+              <PrivateRoute>
+                <Review auth_token={config} />
+              </PrivateRoute>
+            }
+          />
+          <Route
+            path="/profile"
+            element={
+              <PrivateRoute>
+                <Profile auth_token={config} />
+              </PrivateRoute>
+            }
+          />
+          <Route
+            path="blog/blog/addblog"
+            element={
+              <PrivateRoute>
+                <AddBlog auth_token={config} />
+              </PrivateRoute>
+            }
+          />
+          <Route
+            path="blog/updateblog/:id"
+            element={
+              <PrivateRoute>
+                <UpdateBlog auth_token={config} />
+              </PrivateRoute>
+            }
+          />
+          <Route
+            path="/kyc"
+            element={
+              <PrivateRoute>
+                <KYC auth_token={config} />
+              </PrivateRoute>
+            }
+          />
           <Route path="*" element={<NotFound />} />
         </Routes>
         <Footer />

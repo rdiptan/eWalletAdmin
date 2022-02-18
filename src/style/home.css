@@ -11,9 +11,9 @@
 }
 
 .home {
-    min-height: 70vh;
-    padding: 2rem;
-  }
+  min-height: 70vh;
+  padding: 2rem;
+}
 
 .l-bg-cherry {
   background: linear-gradient(to right, #493240, #f09) !important;

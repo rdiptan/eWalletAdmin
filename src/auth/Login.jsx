@@ -1,6 +1,6 @@
 import React, { useState } from 'react'
 import axios from 'axios'
-import '../style/login.css'
+import '../style/responsive.css'
 
 const Login = () => {
     const initState = {

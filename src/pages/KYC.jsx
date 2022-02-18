@@ -10,7 +10,7 @@ const KYC = (props) => {
         if (window.confirm("Are you sure want to verify this KYC?")) {
             const res = await axios.put(`http://localhost:90/kyc/verify/${id}`, {}, props.auth_token)
             console.log(res)
-            // window.location.reload()
+            window.location.reload()
         }
     }
 

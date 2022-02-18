@@ -90,7 +90,7 @@ const Blog = (props) => {
         </div>
       </div>
       <br></br>
-      <Link to='/addblog'>
+      <Link to='blog/addblog'>
         <button
           type="button"
           className="btn btn-success shadow-lg btn-floating btn-circle btn-xl"

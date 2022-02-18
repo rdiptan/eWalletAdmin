@@ -1,6 +1,6 @@
 import React, { useState } from 'react'
 import axios from 'axios'
-import '../style/addfund.css'
+import '../style/responsive.css'
 import { useNavigate } from 'react-router-dom';
 
 const AddFund = () => {

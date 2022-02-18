@@ -6,7 +6,7 @@ body {
   padding: 3rem !important;
 }
 
-.same-line{
+.same-line {
   display: flex;
   justify-content: space-between;
 }

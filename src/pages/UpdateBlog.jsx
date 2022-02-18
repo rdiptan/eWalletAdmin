@@ -1,11 +1,11 @@
 import React, { useState, useEffect, } from 'react'
 import axios from 'axios'
-import { useNavigate,useParams } from 'react-router-dom';
+import { useNavigate, useParams } from 'react-router-dom';
 
 
 const NewBlog = (props) => {
     const navigate = useNavigate();
-    const {id}=useParams();
+    const { id } = useParams();
     const initState = {
         title: '', description: '', content: ''
     }
@@ -21,16 +21,16 @@ const NewBlog = (props) => {
         (
             async () => {
                 const res = await axios.get(`http://localhost:90/blog/view/${id}`, props.auth_token)
-                const {title, description, content}=res.data["data"]
-                const blogDetails={
+                const { title, description, content } = res.data["data"]
+                const blogDetails = {
                     title,
                     description,
                     content
                 }
-                 setFvalue(blogDetails);
-           
+                setFvalue(blogDetails);
+
             })()
-    }, [props.auth_token,id]);
+    }, [props.auth_token, id]);
 
     async function handleSubmit(e) {
         e.preventDefault()
@@ -39,7 +39,7 @@ const NewBlog = (props) => {
                 title, description, content
             }
             let res = await axios.put(`http://localhost:90/blog/update/${id}`, data, props.auth_token);
-           setMessage(res.data.msg)
+            setMessage(res.data.msg)
             if (res.data.success === true) {
                 navigate('/blog')
             }
